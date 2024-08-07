@@ -1,8 +1,8 @@
 
-@tag
+@Second
 Feature: Second opinion
 
-  @tag1
+  @SecondOpinion
   Scenario: 	To validate the second opinion functionality
     Given Open the browser, enter the sparsh hospital URL
     And Select  yeshwantpur hospital from hospital dropdown
@@ -12,13 +12,20 @@ Feature: Second opinion
     Then Thankyou message displayed
     And Bank info available
 
- # @tag2
-  #Scenario Outline: Title of your scenario outline
-   # Given I want to write a step with <name>
-    #When I check for the <value> in step
-    #Then I verify the <status> in step
+  @tag2
+  Scenario Outline: To validate the second opinion functionality with multiple data
+    Given Open the browser, enter the sparsh hospital URL
+    And Select  yeshwantpur hospital from hospital dropdown
+    When user  clicks the second opinion link
+    And user enters a "<firstname>","<lastname>", "<phoneNo>" , "<email>" 
+    And upload a report Enters a messgae ,click on send button  
+    Then Thankyou message displayed
+    And Bank info available
+    
+    
 
-    #Examples: 
-     # | name  | value | status  |
-      #| name1 |     5 | success |
-      #| name2 |     7 | Fail    |
+    Examples: 
+      | firstname| lastname | phoneNo   |email             |
+      | vaish123 |  lakh%   | 87974536  | 123@gmail.com    |
+      | vaishnavi|       @% | 890001234 | ok@gmail.com     |
+      |vaishnavi |   lakhore|8989235478 |vaishulakhore@gmail.com|
